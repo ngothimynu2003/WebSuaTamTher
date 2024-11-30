@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap");
+/* RESET CSS */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: inherit;
+  font-family: "Nunito Sans", sans-serif;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+/* KET THUC RESET CSS */
+
+/* HEADER  */
+header {
+  background-color: #b66367;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 1rem 1.2rem;
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  position: sticky;
+  z-index: 9999;
+  top: 0;
+  transition: background-color 0.4s ease-in-out;
+}
+
+header.scrolled {
+  background-color: #fff;
+  color: #d08d94 !important;
+  opacity: 0.9;
+}
+
+header .logo {
+  width: 100px;
+}
+
+header .navbar a {
+  margin: 0 1.2rem;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  transition: color 0.4s ease-in-out;
+}
+
+header.scrolled nav a {
+  transition: 0.3s ease-in-out;
+  color: #d08d94;
+}
+
+header.scrolled nav a:hover {
+  transition: 0.3s ease-in-out;
+  color: #fff;
+}
+header .navbar a:hover {
+  background-color: #d08d94;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+header .icons a,
+header .icons div {
+  background-color: #eee;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  color: #d08d94;
+}
+
+header .icons a:hover,
+header .icons div:hover {
+  transition: 0.4s color ease-in-out;
+  transition: 0.4s background-color ease-in-out;
+  background-color: #d08d94;
+  color: #fff;
+}
+header.scrolled .icons a:hover,
+header.scrolled .icons div:hover {
+  transition: 0.4s color ease-in-out;
+  transition: 0.4s background-color ease-in-out;
+  background-color: #d08d94;
+  color: #fff;
+}
+header #menu-btn {
+  display: none;
+}
+
+/* KET THUC HEADER */
+
+/* RESPONSIVE HEADER */
+
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 768px) {
+  header #menu-btn {
+    display: inline-block;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 0.2rem solid #d08d94;
+    border-bottom: 0.2rem solid #d08d94;
+    padding: 0.2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background-color: #b66367;
+  }
+
+  header.scrolled .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background-color: #fff;
+    color: #b66367;
+  }
+  header .navbar a {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+}
+
+/* Kết thúc responsive header */
+
+/* MAIN */
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  background-color: #dd6571;
+  height: fit-content;
+}
+.banner_img {
+  margin-top: 0;
+  width: 100%;
+  opacity: 0.5;
+  width: 100%;
+  height: 90vh;
+}
+.banner_img img {
+  object-fit: cover;
+}
+
+.banner_content {
+  position: absolute;
+  padding: 1rem;
+  line-height: 2;
+  position: absolute;
+  top: 40%;
+  right: 40%;
+  color: #fff;
+}
+
+.banner_content-heading {
+  color: #b66367;
+}
+
+.add-to-cart-btn {
+  padding: 1rem 2rem;
+  background: #b66367;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.numberProductGroup {
+  display: flex;
+  align-items: center;
+}
+.add-to-cart-input {
+  height: 3rem;
+  outline: none;
+  border-left: 0;
+  border-right: 0;
+  background-color: #d08d94;
+  padding: 1rem;
+}
+
+.counter-box {
+  display: flex;
+  width: 100%;
+  max-width: 140px;
+  height: 40px;
+  border: 1px solid #d08d94;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.counter-box button {
+  width: 40px;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.counter-box input {
+  width: 60px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-left: 1px solid #d08d94;
+  border-right: 1px solid #d08d94;
+}
+.add-to-cart-btn:hover {
+  opacity: 0.8;
+}
+
+.add-to-cart-btn:active {
+  opacity: 0.6;
+}
+.shop-btn {
+  padding: 1rem 2rem;
+  background: #b66367;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-top: 1rem;
+}
+.shop-btn:hover {
+  background-color: #fff;
+  color: #b66367;
+}
+.shop-btn:active {
+  background-color: #fff;
+  color: #b66367;
+}
+
+.feature_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.feature_img {
+  width: 50%;
+  height: 500px;
+}
+
+.feature_img img {
+  object-fit: cover;
+}
+
+.feature_text {
+  line-height: 2;
+  padding: 1rem;
+  width: 50%;
+}
+
+.feature_section2 {
+  flex-direction: row-reverse;
+}
+
+.best_sellers-title {
+  text-align: center;
+  color: #b66367;
+}
+/* .products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  margin: 1rem auto;
+  padding: 1rem;
+} */
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* 5 sản phẩm mỗi dòng */
+  row-gap: 2rem;
+  column-gap: 2rem;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: ease-in-out 0.3s;
+  padding: 0.5rem;
+  position: relative;
+}
+.product_img {
+  width: 250px;
+  padding: 1rem;
+}
+.product:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+}
+.add_to_cart-btn {
+  position: absolute;
+  opacity: 0;
+}
+.add_to_cart-btn:hover {
+  opacity: 1;
+}
+
+/* KẾt thúc css MAIN */
+
+/* RESPONSIVE MAIN */
+
+@media only screen and (max-width: 768px) {
+  .banner_content {
+    width: 40%;
+    position: absolute;
+    padding: 1rem;
+    line-height: 2;
+    position: absolute;
+    font-size: 1.2rem;
+    top: 10%;
+    right: 45%;
+  }
+  .banner_img img {
+    object-position: right;
+  }
+  .feature_section {
+    flex-direction: column;
+  }
+  .feature_img {
+    width: 50%;
+    height: 500px;
+  }
+  .products {
+    grid-template-columns: 1fr;
+  }
+  .banner_img {
+    width: 100%;
+  }
+  .banner_content {
+    top: 20%;
+    right: 0;
+    width: 100%;
+  }
+  .feature_section {
+    padding: 0rem;
+  }
+
+  .feature_img {
+    width: 100%;
+  }
+  .feature_text {
+    line-height: 2;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .feature_section2 {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .banner_img {
+    width: 100%;
+  }
+  .banner_img img {
+    object-position: right;
+  }
+  .banner_content {
+    width: 100%;
+    font-size: 0.8rem;
+    position: absolute;
+    padding: 1rem;
+    line-height: 1.5;
+    position: absolute;
+    top: 20%;
+    right: 0;
+  }
+  .shop-btn {
+    padding: 0.5rem 1rem;
+  }
+  .feature_section {
+    padding: 0rem;
+  }
+
+  .feature_img {
+    width: 100%;
+  }
+  .feature_text {
+    line-height: 2;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .feature_section2 {
+    flex-direction: column;
+  }
+}
+
+/* END RESPONSIVE MAIN */
+
+/* CSS FOOTER  */
+
+footer {
+  background-color: #b66367;
+  color: #fff;
+  height: fit-content;
+  padding: 2rem;
+}
+.footer_content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  padding: 1rem;
+  column-gap: 1rem;
+}
+.social_media a {
+  font-size: 1.2rem;
+  margin: 1rem 0.8rem 0 0;
+}
+
+.copyright {
+  border-top: 1px solid;
+  background-color: #b66367;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* RESPONSIVE FOOTER */
+
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 768px) {
+  .footer_content {
+    grid-template-columns: 1fr;
+    line-height: 2;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+}
+
+/* Kết thúc responsive FOOTER */
